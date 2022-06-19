@@ -1,31 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ecommerce Next.js application
+
+## Tech
+
+- [Next.js](https://nextjs.org/)
+- [CockroachDB](https://www.cockroachlabs.com/)
+- [TailwindCSS](https://tailwindcss.com/)
 
 ## Getting Started
 
-First, run the development server:
+### .env setup
+
+Copy and rename the `.env.example` file in the project root using:
+
+```
+cp .env.example .env
+```
+
+Your `.env` file should include the following:
+
+```
+DATABASE_URL="postgresql://root@0.0.0.0:26257/defaultdb"
+```
+
+### Install & run application
+
+Install dependencies via npm:
+
+```bash
+npm i
+```
+
+You can then launch the API and frontend of the application using:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Docker
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+A `docker-compose.yml` file is included in the root project directory. This runs any development service dependencies (such as CockroachDB) and can be run using:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+docker-compose up
+```
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+### Prisma/CockroachDB
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To sync your local database with the project schema, you should run `npx prisma migrate dev`. You can access CockroachDB using [http://0.0.0.0:8080](http://0.0.0.0:8080/).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+npm run dev
+```
 
 ## Deploy on Vercel
 
