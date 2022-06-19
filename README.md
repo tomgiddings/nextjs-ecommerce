@@ -46,7 +46,6 @@ A `docker-compose.yml` file is included in the root project directory. This runs
 docker-compose up
 ```
 
-
 ### Prisma/CockroachDB
 
 To sync your local database with the project schema, you should run `npx prisma migrate dev`. You can access CockroachDB using [http://0.0.0.0:8080](http://0.0.0.0:8080/).
