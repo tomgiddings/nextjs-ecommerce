@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Navigation: React.FunctionComponent = () => (
   <div className="bg-slate-700 text-white">
-    <header className="container mx-auto grid grid-flow-row gap-2 items-center">
+    <header className="container mx-auto grid grid-flow-row gap-2 items-center px-4 md:px-0">
       <Link href="/">
         <a className="text-6xl font-thin text-slate-200">Storefront</a>
       </Link>
