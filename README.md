@@ -6,6 +6,12 @@
 - [CockroachDB](https://www.cockroachlabs.com/)
 - [TailwindCSS](https://tailwindcss.com/)
 
+
+## Screenshots
+
+![Home](screenshot-home.png)
+![Product](screenshot-product.png)
+
 ## Getting Started
 
 ### .env setup
