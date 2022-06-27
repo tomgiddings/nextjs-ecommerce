@@ -12,9 +12,31 @@ datasource db {
 
 model Product {
   id                Int      @id @default(sequence())
+  active            Boolean  @default(false)
+  addonOnly         Boolean  @default(false)
   name              String
   shortDescription  String?
   fullDescription   String?
   price             Decimal?
   createdAt         DateTime @default(now())
+  addons            Product[] @relation("Addons", references: [id])
+  addonTo           Product[] @relation("Addons", references: [id])
+  allergens         Allergen[]
+}
+
+enum Allergen {
+  CELERY
+  GLUTEN
+  CRUSTACEAN
+  EGGS
+  FISH
+  LUPIN
+  MILK
+  MOLLUSCS
+  MUSTARD
+  NUTS
+  PEANUTS
+  SESAME
+  SOYA
+  SULPHITES
 }
